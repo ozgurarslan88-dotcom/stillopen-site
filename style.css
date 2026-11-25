@@ -1,0 +1,146 @@
+/* Still Open — site styles. Colours follow the channel thumbnails:
+   painted-map cream and olive, route blue, danger orange-red, highway-sign green. */
+:root{
+  --paper:#f4efe2;
+  --paper-2:#ebe4d1;
+  --ink:#24261f;
+  --ink-soft:#5a5b4e;
+  --line:#d6ceb8;
+  --route:#1f56c2;
+  --danger:#d9481c;
+  --sign:#0f6b3f;
+  --sign-dark:#0b5531;
+  --sign-text:#ffffff;
+  --yellow:#f2c230;
+  --card:#fbf8f0;
+  --shadow:0 1px 2px rgba(36,38,31,.08),0 6px 18px rgba(36,38,31,.06);
+  --radius:10px;
+  --max:1120px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#161812; --paper-2:#1e2119; --ink:#ece7d8; --ink-soft:#a9a690;
+    --line:#2f3328; --route:#6d9cff; --danger:#ff7a4d; --sign:#13804c; --sign-dark:#0e6a3e;
+    --card:#1c1f17; --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:17px/1.6 "Source Serif 4",Georgia,serif;}
+a{color:var(--route)}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
+
+/* header */
+.top{background:var(--sign);color:var(--sign-text);border-bottom:4px solid var(--yellow)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;
+  font:700 22px/1 "Overpass",system-ui,sans-serif;letter-spacing:.02em}
+.brand .shield{width:30px;height:30px;flex:none}
+.top nav{display:flex;gap:18px;font:600 15px/1 "Overpass",system-ui,sans-serif}
+.top nav a{color:var(--sign-text);text-decoration:none;opacity:.9}
+.top nav a:hover{opacity:1;text-decoration:underline}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:8px;
+  font:700 16px/1 "Overpass",system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn-red{background:var(--danger);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.btn:hover{filter:brightness(1.05)}
+
+/* hero */
+.hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(1200px 400px at 80% -10%,rgba(31,86,194,.08),transparent 60%),
+    var(--paper)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{font:700 13px/1 "Overpass",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--danger)}
+.hero h1{font:800 clamp(34px,5vw,54px)/1.05 "Overpass",system-ui,sans-serif;margin:12px 0 16px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--route)}
+.hero p.lede{font-size:19px;color:var(--ink-soft);margin:0 0 24px;max-width:34em}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.latest{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.latest .label{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;
+  font:700 13px/1 "Overpass",system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.latest .label span:last-child{color:var(--ink-soft);font-weight:600;letter-spacing:0;text-transform:none;font-size:14px}
+.embed{position:relative;aspect-ratio:16/9;background:#000}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.latest h2{font:700 19px/1.3 "Overpass",system-ui,sans-serif;margin:0;padding:14px 16px 16px}
+.latest h2 a{color:var(--ink);text-decoration:none}
+.latest h2 a:hover{color:var(--route)}
+
+/* method strip */
+.method{padding:32px 0;border-bottom:1px solid var(--line);background:var(--paper-2)}
+.method .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.method h3{font:700 16px/1.2 "Overpass",system-ui,sans-serif;margin:0 0 6px;display:flex;gap:8px;align-items:center}
+.method h3 .dot{width:10px;height:10px;border-radius:50%;flex:none}
+.method p{margin:0;color:var(--ink-soft);font-size:16px}
+
+/* road list */
+.section{padding:48px 0 64px}
+.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:20px}
+.section-head h2{font:800 30px/1.1 "Overpass",system-ui,sans-serif;margin:0}
+.section-head p{margin:4px 0 0;color:var(--ink-soft)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 14px/1 "Overpass",system-ui,sans-serif;padding:9px 13px;border-radius:999px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--sign);border-color:var(--sign);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
+  display:flex;flex-direction:column;text-decoration:none;color:var(--ink);transition:transform .15s}
+.card:hover{transform:translateY(-2px)}
+.thumb{aspect-ratio:16/9;background:var(--paper-2) center/cover no-repeat;position:relative}
+.thumb .state{position:absolute;left:8px;bottom:8px;background:var(--sign);color:#fff;
+  font:700 12px/1 "Overpass",system-ui,sans-serif;padding:5px 7px;border-radius:4px;border:1px solid rgba(255,255,255,.7)}
+.thumb .file{position:absolute;right:8px;top:8px;background:var(--yellow);color:#24261f;
+  font:800 11px/1 "Overpass",system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border-radius:4px}
+.card .body{padding:12px 14px 16px;display:flex;flex-direction:column;gap:6px}
+.card .place{font:italic 15px/1.3 "Source Serif 4",Georgia,serif;color:var(--ink-soft)}
+.card h3{font:700 16px/1.3 "Overpass",system-ui,sans-serif;margin:0}
+.empty{color:var(--ink-soft)}
+
+/* road file page */
+.file-head{padding:40px 0 24px;border-bottom:1px solid var(--line)}
+.crumb{font:600 14px/1 "Overpass",system-ui,sans-serif}
+.crumb a{text-decoration:none}
+.signplate{display:inline-block;margin:18px 0 10px;background:var(--sign);color:#fff;border:3px solid #fff;
+  outline:2px solid var(--sign);border-radius:8px;padding:10px 16px;
+  font:800 clamp(22px,3.4vw,32px)/1.1 "Overpass",system-ui,sans-serif;letter-spacing:.03em;text-transform:uppercase}
+.file-head h1{font:700 clamp(22px,3vw,30px)/1.25 "Overpass",system-ui,sans-serif;margin:8px 0 6px}
+.file-head .meta{color:var(--ink-soft);font-style:italic}
+.file-body{display:grid;grid-template-columns:1fr 320px;gap:36px;padding:32px 16px 64px}
+.file-body h2{font:800 22px/1.2 "Overpass",system-ui,sans-serif;margin:32px 0 10px}
+.file-body h2:first-child{margin-top:0}
+.facts{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;position:sticky;top:16px}
+.facts h2{margin:0 0 12px;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--danger)}
+.facts dl{margin:0;display:grid;gap:14px}
+.facts dt{font:800 26px/1 "Overpass",system-ui,sans-serif;color:var(--route)}
+.facts dd{margin:4px 0 0;font-size:15px;color:var(--ink-soft);line-height:1.4}
+.tips{padding-left:0;list-style:none;margin:0;display:grid;gap:10px}
+.tips li{background:var(--card);border-left:4px solid var(--yellow);padding:10px 14px;border-radius:0 8px 8px 0}
+.timeline{list-style:none;margin:0;padding:0;border-left:3px solid var(--line)}
+.timeline li{position:relative;padding:0 0 16px 20px}
+.timeline li::before{content:"";position:absolute;left:-8px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--route);border:2px solid var(--paper)}
+.timeline li.alert::before{background:var(--danger)}
+.timeline b{font-family:"Overpass",system-ui,sans-serif}
+.sources{font-size:15px;padding-left:20px}
+.sources li{margin-bottom:6px}
+.note{font-size:14px;color:var(--ink-soft);font-style:italic}
+
+/* footer */
+footer{background:var(--ink);color:#d9d4c2;padding:36px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:#fff}
+footer .fine{color:#a9a690;max-width:40em}
+
+@media (max-width:860px){
+  .hero .wrap,.file-body{grid-template-columns:1fr}
+  .method .wrap{grid-template-columns:1fr}
+  .facts{position:static}
+  .top nav{gap:12px;font-size:14px}
+}
+@media (max-width:480px){
+  .top nav a.hide-sm{display:none}
+  .hero{padding:36px 0 28px}
+}
