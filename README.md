@@ -23,3 +23,12 @@ Static site. No build step. Files:
 ## Add a new video
 1. In videos.js, copy the first line, paste it above, change id / title / place / state / region.
 2. Optional Road File: copy roads/knoxville-i40.html, change the text, video id and sources, then add `page:"roads/<file>.html"` to the line in videos.js.
+
+## Road File pages (generated)
+Road File content lives in `_build/roads_data.py`. After editing it, run:
+    python3 _build/build.py
+This writes `roads/<slug>.html`, `sitemap.xml` and `robots.txt`.
+`roads/knoxville-i40.html` is hand-written.
+
+## Map
+`map.html` reads `lat`/`lng` from videos.js. Every new video line needs coordinates.
