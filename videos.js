@@ -3,6 +3,7 @@
 // page: optional link to a Road File page in /roads/
 // lat, lng: map pin position (approximate centre of the road segment)
 window.VIDEOS = [
+  {id:"dgfBIa0oX0Q", title:"Why Truckers Fear the Saluda Grade on I-26 in North Carolina", place:"I-26, Saluda Grade", state:"NC", region:"southeast", lat:35.24, lng:-82.29, page:"roads/saluda-grade.html"},
   {id:"jQKlTL430FY", title:"Why Tennessee Shut Down I-40 Through Knoxville for 14 Months", place:"I-40, Knoxville", state:"TN", region:"southeast", page:"roads/knoxville-i40.html", lat:35.96, lng:-83.92},
   {id:"LDuwkeK4-ec", title:"Why I-75 Keeps Falling Off Jellico Mountain in Tennessee", place:"I-75, Jellico Mountain", state:"TN", region:"southeast", lat:36.45, lng:-84.17},
   {id:"7OE0wSRtxDg", title:"Why Drivers Can't Pull Over on the Brent Spence Bridge", place:"I-71/75, Brent Spence Bridge", state:"KY · OH", region:"midwest", lat:39.093, lng:-84.522},
