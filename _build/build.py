@@ -70,7 +70,7 @@ def page(r):
         "@context": "https://schema.org", "@type": "VideoObject",
         "name": r["title"], "description": " ".join(r["summary"]),
         "thumbnailUrl": [f"https://i.ytimg.com/vi/{r['id']}/maxresdefault.jpg"],
-        "uploadDate": r["date"], "embedUrl": f"https://www.youtube.com/embed/{r['id']}",
+        "uploadDate": r["date"] + "T12:00:00+00:00", "embedUrl": f"https://www.youtube.com/embed/{r['id']}",
         "contentUrl": f"https://www.youtube.com/watch?v={r['id']}",
         "publisher": {"@type": "Organization", "name": "Still Open", "url": SITE},
     }

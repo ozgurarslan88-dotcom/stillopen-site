@@ -3,6 +3,7 @@
 // page: optional link to a Road File page in /roads/
 // lat, lng: map pin position (approximate centre of the road segment)
 window.VIDEOS = [
+  {id:"0DOX4eI0Tg8", title:"This California Interstate Tells You to Turn Off Your AC", place:"I-8, Mountain Springs Grade", state:"CA", region:"west", lat:32.67, lng:-116.10, page:"roads/i-8-mountain-springs-grade.html"},
   {id:"dgfBIa0oX0Q", title:"Why Truckers Fear the Saluda Grade on I-26 in North Carolina", place:"I-26, Saluda Grade", state:"NC", region:"southeast", lat:35.24, lng:-82.29, page:"roads/saluda-grade.html"},
   {id:"jQKlTL430FY", title:"Why Tennessee Shut Down I-40 Through Knoxville for 14 Months", place:"I-40, Knoxville", state:"TN", region:"southeast", page:"roads/knoxville-i40.html", lat:35.96, lng:-83.92},
   {id:"LDuwkeK4-ec", title:"Why I-75 Keeps Falling Off Jellico Mountain in Tennessee", place:"I-75, Jellico Mountain", state:"TN", region:"southeast", lat:36.45, lng:-84.17},
